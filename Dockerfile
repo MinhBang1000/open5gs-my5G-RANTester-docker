@@ -1,4 +1,5 @@
-FROM golang:1.14.4-stretch
+# FROM golang:1.14.4-stretch
+FROM golang:1.14-buster
 
 WORKDIR /workspace
 
@@ -13,7 +14,7 @@ WORKDIR /workspace/my5G-RANTester/cmd
 RUN go build -o app
 
 # Install iperf
-# RUN apt update && apt install -y iperf
+RUN apt update && apt install -y iperf
 
 # Config files volume
 VOLUME [ "/workspace/my5G-RANTester/config" ]
